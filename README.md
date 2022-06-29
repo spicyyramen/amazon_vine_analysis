@@ -107,3 +107,46 @@ In Google Colab
 
 ## Analysis of Vine Reviews with PySpark
 ---
+The `vine_table` was used to analyze whether paid vine reviews were more likely to be positive versus unpaid reviews.
+
+### **Vine Table**<br>
+![Vine Table DF](images/vine_table_df.png)
+
+### *Breakdown of `vine_table`*<br>
+* `review_id` = ID of the review
+* `star_rating` = what the reviewer rated the game (1-5)
+* `helpful_votes` = number of times the review was voted as being 'helpful'
+* `total_votes` = total number of times review was voted as 'helpful' or 'not helpful'
+* `vine` = whether the review was part of the Vine program (Y or N)
+* `verified_purchase` = whether the review was submitted by a verified purchaser of the game
+
+### Two additional dataframes, Vine (paid) and non-Vine (unpaid), were then created with the following criteria:
+- Reviews must have >= 20 votes
+- At least 50% of votes for each review were 'helpful'
+
+### Using these two new dataframes, the following values were calculated:
+1. total number of reviews
+2. total number of five-star reviews
+3. percentage of five-star reviews
+
+<br>
+
+## Results
+---
+
+### **Paid Vine Reviews**
+
+![Paid Review Results](images/paid_results.png)
+
+### **Unpaid Reviews**
+
+![Unpaid Review Results](images/unpaid_results.png)
+
+## Summary
+---
+The analysis determined that 51.1% of paid Vine reviews were five-star reviews, versus only 38.7% of unpaid reviews. This indicates a potential bias toward positive reviews in the Vine program- which makes sense since paid reviewers may be more motivated to write positive reviews. 
+
+One major caveat to this analysis is there is a disproportionate number of Vine reviews (n=94) compared to non-Vine reviews (n=40,471), which may skew the data.
+
+
+
